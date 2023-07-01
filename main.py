@@ -34,7 +34,7 @@ class App(tk.Tk):
         self.pdf_cache = dict()
         self.card_scale = 1
         self.card_dpi = 200
-        self.TITLE = 'BattleScribe - 10th  edition'
+        self.TITLE = 'WarTome - 10th  edition'
 
         # self.geometry('1300x600')
         # self.overrideredirect(1)
