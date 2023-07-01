@@ -1,8 +1,7 @@
 {
-    "PDF" : {
-        
+    "PDF": {
     },
-    "FACTIONS":{
+    "FACTIONS": {
         "ADEPTA SORORITAS": {
             "Aestred Thurga and Agathae Dolan": {
                 "2 models": 70
@@ -194,6 +193,48 @@
                 "9 models": 135,
                 "10 models": 150
             },
+            "Agamatus Custodians": {
+                "3 models": 280,
+                "6 models": 560
+            },
+            "Aquilon Custodians": {
+                "3 models": 230,
+                "6 models": 460
+            },
+            "Ares Gunship": {
+                "1 model": 580
+            },
+            "Caladius Grav-tank": {
+                "1 model": 215
+            },
+            "Contemptor-Achillus Dreadnought": {
+                "1 model": 155
+            },
+            "Contemptor-Galatus Dreadnought": {
+                "1 model": 175
+            },
+            "Coronus Grav-carrier": {
+                "1 model": 200
+            },
+            "and Pyrithite Spears": {
+                "5 models": 325
+            },
+            "Orion Assault Dropship": {
+                "1 model": 690
+            },
+            "Pallas Grav-attack": {
+                "1 model": 120
+            },
+            "Sagittarum Custodians": {
+                "5 models": 250
+            },
+            "Telemon Heavy Dreadnought": {
+                "1 model": 235
+            },
+            "Venatari Custodians": {
+                "3 models": 235,
+                "6 models": 470
+            },
             "DETACHMENT ENHANCEMENTS": {
                 "Shield Host": {
                     "Ceaseless Hunter": 30,
@@ -313,6 +354,20 @@
                     "Master Annihilator": 35,
                     "Omni-steriliser": 20
                 }
+            }
+        },
+        "ADEPTUS TITANICUS": {
+            "Reaver Titan": {
+                "1 model": 2200
+            },
+            "Warbringer Nemesis Titan": {
+                "1 model": 2600
+            },
+            "Warhound Titan": {
+                "1 model": 1100
+            },
+            "Warlord Titan": {
+                "1 model": 3500
             }
         },
         "AELDARI": {
@@ -517,6 +572,44 @@
             },
             "Yvraine": {
                 "1 model": 100
+            },
+            "Cobra": {
+                "1 model": 415
+            },
+            "Hornet": {
+                "1 model": 80
+            },
+            "Irillyth": {
+                "1 model": 105
+            },
+            "Lynx": {
+                "1 model": 155
+            },
+            "Nightwing": {
+                "1 model": 150
+            },
+            "Scorpion": {
+                "1 model": 410
+            },
+            "Skathach Wraithknight": {
+                "1 model": 385
+            },
+            "Shadow Spectres": {
+                "5 Shadow Spectres": 80,
+                "10 Shadow Spectres": 160,
+                "+ Shadow Spectre Exarch": 20
+            },
+            "Phantom Titan": {
+                "1 model": 2100
+            },
+            "Revenant Titan": {
+                "1 model": 1100
+            },
+            "Warp Hunter": {
+                "1 model": 130
+            },
+            "Wraithseer": {
+                "1 model": 160
             },
             "DETACHMENT ENHANCEMENTS": {
                 "Battle Host": {
@@ -783,6 +876,98 @@
             },
             "Wyvern": {
                 "1 model": 90
+            },
+            "Avenger Strike Fighter": {
+                "1 model": 130
+            },
+            "Carnodon": {
+                "1 model": 160
+            },
+            "Colossus": {
+                "1 model": 130
+            },
+            "Crassus": {
+                "1 model": 180
+            },
+            "Cyclops Demolition Vehicle": {
+                "1 model": 25
+            },
+            "Death Korps Marshal": {
+                "1 model": 60
+            },
+            "Death Rider Squadron": {
+                "5 models": 70,
+                "10 models": 140
+            },
+            "Death Rider Squadron Commander": {
+                "1 model": 60
+            },
+            "Earthshaker Carriage Battery": {
+                "1 model": 70
+            },
+            "Hades Breaching Drill": {
+                "1 model": 110
+            },
+            "Macharius": {
+                "1 model": 310
+            },
+            "Macharius Vanquisher": {
+                "1 model": 285
+            },
+            "Macharius Vulcan": {
+                "1 model": 310
+            },
+            "Malcador": {
+                "1 model": 250
+            },
+            "Malcador Annihilator": {
+                "1 model": 270
+            },
+            "Malcador Defender": {
+                "1 model": 310
+            },
+            "Malcador Infernus": {
+                "1 model": 235
+            },
+            "Marauder Bomber": {
+                "1 model": 345
+            },
+            "Marauder Destroyer": {
+                "1 model": 375
+            },
+            "Medusa Carriage Battery": {
+                "1 model": 65
+            },
+            "Praetor": {
+                "1 model": 225
+            },
+            "Rapier Laser Destroyer Battery": {
+                "1 model": 30,
+                "2 models": 60,
+                "3 models": 90
+            },
+            "Stormblade": {
+                "1 model": 415
+            },
+            "Tarantula Battery": {
+                "1 model": 35,
+                "2 models": 70,
+                "3 models": 105
+            },
+            "Thunderbolt Heavy Fighter": {
+                "1 model": 190
+            },
+            "Trojan Support Vehicle": {
+                "1 model": 80
+            },
+            "Valdor": {
+                "1 model": 285
+            },
+            "Voss-pattern Lightning": {
+                "1 model": 130
+            },
+            "Vulture Gunship": {
+                "1 model": 225
             },
             "DETACHMENT ENHANCEMENTS": {
                 "Combined Regiment": {
@@ -1144,6 +1329,33 @@
             },
             "War Dog Stalker": {
                 "1 model": 135
+            },
+            "Chaos Acastus Knight Asterius": {
+                "1 model": 730
+            },
+            "Chaos Acastus Knight Porphyrion": {
+                "1 model": 645
+            },
+            "Chaos Cerastus Knight Acheron": {
+                "1 model": 405
+            },
+            "Chaos Cerastus Knight Atrapos": {
+                "1 model": 405
+            },
+            "Chaos Cerastus Knight Castigator": {
+                "1 model": 420
+            },
+            "Chaos Cerastus Knight Lancer": {
+                "1 model": 405
+            },
+            "Chaos Questoris Knight Magaera": {
+                "1 model": 405
+            },
+            "Chaos Questoris Knight Styrix": {
+                "1 model": 440
+            },
+            "War Dog Moirax": {
+                "1 model": 170
             },
             "DETACHMENT ENHANCEMENTS": {
                 "Traitoris Lance": {
@@ -1637,6 +1849,9 @@
             "Wyches": {
                 "10 models": 110
             },
+            "Tantalus": {
+                "1 model": 230
+            },
             "DETACHMENT ENHANCEMENTS": {
                 "Realspace Raiders": {
                     "Crucible of Malediction": 10,
@@ -1820,6 +2035,12 @@
                 "5 models": 135,
                 "10 models": 270
             },
+            "Grey Knights Thunderhawk Gunship": {
+                "1 model": 805
+            },
+            "Land Raider Banisher": {
+                "1 model": 255
+            },
             "DETACHMENT ENHANCEMENTS": {
                 "Teleport Strike Force": {
                     "Domina Liber Daemonica": 20,
@@ -1862,6 +2083,33 @@
             },
             "Knight Warden": {
                 "1 model": 420
+            },
+            "Acastus Knight Asterius": {
+                "1 model": 730
+            },
+            "Acastus Knight Porphyrion": {
+                "1 model": 645
+            },
+            "Armiger Moirax": {
+                "1 model": 170
+            },
+            "Cerastus Knight Acheron": {
+                "1 model": 385
+            },
+            "Cerastus Knight Atrapos": {
+                "1 model": 385
+            },
+            "Cerastus Knight Castigator": {
+                "1 model": 425
+            },
+            "Cerastus Knight Lancer": {
+                "1 model": 430
+            },
+            "Questoris Knight Magaera": {
+                "1 model": 390
+            },
+            "Questoris Knight Styrix": {
+                "1 model": 425
             },
             "DETACHMENT ENHANCEMENTS": {
                 "Noble Lance": {
@@ -2091,6 +2339,22 @@
             "Vargard Obyron": {
                 "1 model": 85
             },
+            "Canoptek Acanthrites": {
+                "3 models": 85,
+                "6 models": 170
+            },
+            "Canoptek Tomb Sentinel": {
+                "1 model": 115
+            },
+            "Canoptek Tomb Stalker": {
+                "1 model": 130
+            },
+            "Seraptek Heavy Construct": {
+                "1 model": 470
+            },
+            "Tesseract Ark": {
+                "1 model": 130
+            },
             "DETACHMENT ENHANCEMENTS": {
                 "Awakened Dynasty": {
                     "Hypermaterial Ablator": 25,
@@ -2290,6 +2554,37 @@
             },
             "Zodgrod Wortsnagga": {
                 "1 model": 80
+            },
+            "Big Trakk": {
+                "1 model": 75
+            },
+            "Grot Mega-tank": {
+                "1 model": 110
+            },
+            "Grot Tanks": {
+                "4 models": 155,
+                "8 models": 310
+            },
+            "Gargantuan Squiggoth": {
+                "1 model": 440
+            },
+            "Kill Tank": {
+                "1 model": 305
+            },
+            "Mega Dread": {
+                "1 model": 225
+            },
+            "Meka-dread": {
+                "1 model": 230
+            },
+            "Nobz on Warbikes": {
+                "3 models": 125
+            },
+            "Squiggoth": {
+                "1 model": 150
+            },
+            "Warboss on Warbike": {
+                "1 model": 85
             },
             "DETACHMENT ENHANCEMENTS": {
                 "Waaagh! Tribe": {
@@ -2701,6 +2996,12 @@
             "Whirlwind": {
                 "1 model": 125
             },
+            "Astraeus": {
+                "1 model": 525
+            },
+            "Thunderhawk Gunship": {
+                "1 model": 840
+            },
             "DETACHMENT ENHANCEMENTS": {
                 "Gladius Task Force": {
                     "Adept of the Codex": 20,
@@ -2962,6 +3263,34 @@
             },
             "Vespid Stingwings": {
                 "5 models": 75
+            },
+            "AX-1-0 Tiger Shark": {
+                "1 model": 315
+            },
+            "Barracuda": {
+                "1 model": 220
+            },
+            "Manta": {
+                "1 model": 2100
+            },
+            "Remora Stealth Drones": {
+                "2 models": 160
+            },
+            "R\u2019varna Battlesuit": {
+                "1 model": 235
+            },
+            "Ta\u2019unar Supremacy Armour": {
+                "1 model": 685
+            },
+            "Tetras": {
+                "2 models": 80,
+                "4 models": 160
+            },
+            "Tiger Shark": {
+                "1 model": 275
+            },
+            "Y\u2019vahra Battlesuit": {
+                "1 model": 235
             },
             "DETACHMENT ENHANCEMENTS": {
                 "Kauyon": {
@@ -3225,6 +3554,18 @@
             "Zoanthropes": {
                 "3 models": 90,
                 "6 models": 180
+            },
+            "Barbed Hierodule": {
+                "1 model": 305
+            },
+            "Harridan": {
+                "1 model": 655
+            },
+            "Hierophant": {
+                "1 model": 810
+            },
+            "Scythed Hierodule": {
+                "1 model": 305
             },
             "DETACHMENT ENHANCEMENTS": {
                 "Invasion Fleet": {
