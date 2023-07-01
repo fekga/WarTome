@@ -1,4 +1,4 @@
-# BattleScribe - 10th Edition
+# WarTome - Warhammer 40k - 10th Edition
 
 ## Adding pdf to the json
 The `models.json` contains the preprocessed point values of each unit. A pdf's path can be added to the `models.json` under `PDF` and under `[FACTION NAME]` key as a value.
