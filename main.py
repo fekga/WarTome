@@ -1,5 +1,6 @@
 import tkinter as tk
 import tkinter.font
+import tkinter.messagebox
 from tkinter import ttk
 import pyglet
 import pathlib
@@ -9,6 +10,9 @@ import fitz
 import json
 
 from ctypes import windll
+
+import wartome as wt
+
 # make text crisp on the gui
 windll.shcore.SetProcessDpiAwareness(1)
 
@@ -22,8 +26,6 @@ def resource_path(relative_path):
 
     return os.path.join(base_path, relative_path)
 
-pyglet.font.add_file(resource_path('aAtmospheric.ttf'))
-
 
 class App(tk.Tk):
     def __init__(self):
@@ -36,58 +38,94 @@ class App(tk.Tk):
         self.card_dpi = 200
         self.TITLE = 'WarTome - 10th  edition'
 
-        # self.geometry('1300x600')
-        # self.overrideredirect(1)
+
         self.title(self.TITLE)
         self.state('zoomed')
+        self.geometry('1000x800')
         self.minsize(1000,800)
         self.iconbitmap(resource_path("wh40k.ico"))
 
+        
+
+        self.init_styles()
+        self.init_widgets()
+        self.init_bindings()
+        self.after(0, self.post_init)
+
+    def init_styles(self):
+
         font_name = 'a Atmospheric'
-        self.defaultFont = tk.font.nametofont("TkDefaultFont")
-  
-        self.defaultFont.configure(family='Noto Mono',size=10, weight='bold')
+        font_size = 10
+        label_size = 18
+        row_height = 25
+        defaultFont = tk.font.nametofont("TkDefaultFont")
+        defaultFont.configure(family='Noto Mono',size=font_size, weight='bold')
+
+        selection_color = '#b92'
+        deselection_color = '#222'
+        background = '#222'
+        foreground = '#eee'
+
         style = ttk.Style()
         style.theme_use("clam")
-        style.configure("TLabel", font=(font_name, 18), background='#222', foreground='#eee')
-        selection_color = '#b92'
-        style.configure("Treeview.Heading", 
-            font=(font_name, 10), 
-            background='#222', 
-            foreground='#eee', 
-            focuscolor=selection_color)
-        style.configure("Treeview",
-                background="#222",
-                foreground="#eee",
-                rowheight=25,
-                fieldbackground="#222")
+
+        style.configure("TLabel", 
+            font=(font_name, label_size), 
+            background=background, 
+            foreground=foreground)
         
-        style.map('Treeview', background=[('selected', selection_color)], foreground=[('selected', '#222')])
-        style.map('Treeview.Heading', background=[('selected', selection_color)], foreground=[('selected', '#222')])
+        style.configure("Treeview.Heading", 
+            font=(font_name, font_size), 
+            background=background, 
+            foreground=foreground, 
+            focuscolor=selection_color)
+
+        style.configure("Treeview",
+                background=background,
+                foreground=foreground,
+                rowheight=row_height,
+                fieldbackground=background)
+        
+        style.map('Treeview', 
+            background=[
+            ('selected', selection_color), 
+            ('!selected', deselection_color)], 
+            foreground=[
+            ('selected', background),
+            ('!selected', foreground)])
+
+        style.map('Treeview.Heading', 
+            background=[
+            ('selected', selection_color), 
+            ('!selected', deselection_color)], 
+            foreground=[
+            ('selected', background),
+            ('!selected', foreground)])
+
         style.layout("Treeview.Item",
             [('Treeitem.padding', {'sticky': 'nswe', 'children': 
                 [('Treeitem.indicator', {'side': 'left', 'sticky': ''}),
                 ('Treeitem.image', {'side': 'left', 'sticky': ''}),
                      ('Treeitem.text', {'side': 'left', 'sticky': ''}),
                 ],
-            })]
-            )
+            })])
+
         style.layout('arrowless.Vertical.TScrollbar', 
              [('Vertical.Scrollbar.trough',
                {'children': 
-               [
-                    ('Vertical.Scrollbar.thumb', {
-                        'unit' : '1',
-                        'sticky': 'nswe'}
-                     )
+               [('Vertical.Scrollbar.thumb', 
+                        {'unit' : '1',
+                        'sticky': 'nswe'})
                 ],
                 'sticky': 'ns'})])
+
         style.map('arrowless.Vertical.TScrollbar',
-            background=[('active','#eee'), ('!active','#222')],
-            troughcolor=[('active','#eee'), ('!active', '#222')],
+            background=[('active',foreground), ('!active',background)],
+            troughcolor=[('active',foreground), ('!active', background)],
             gripcount=[('active',0),('!active',0)]
             )
 
+    def init_widgets(self):
         self.columnconfigure(0,weight=100)
         self.columnconfigure(1,weight=0)
         self.columnconfigure(2,weight=100)
@@ -104,15 +142,6 @@ class App(tk.Tk):
         tree.column('#0', anchor=tk.W, stretch=True, minwidth=400)
         tree.heading('CPS', text='CPS', anchor=tk.CENTER)
         tree.column('CPS', anchor=tk.E, stretch=True)
-
-        # set colors based on tags
-        # tree.tag_configure('unit', background='#141')
-        # tree.tag_configure('command points', background='#eee', foreground='#222')
-
-        with open('models.json','r',encoding='utf8') as f:
-            self.models = json.load(f)
-
-        self.load_tree(tree,self.models)
 
         tree.grid(column=0,row=0, rowspan=3, sticky=tk.NSEW)
 
@@ -145,6 +174,7 @@ class App(tk.Tk):
         self.total_value = ttk.Label(self.total_frame, text='0  pts', anchor=tk.CENTER)
         self.total_value.grid(column=1,row=0,sticky='news')
 
+    def init_bindings(self):
         self.tree.bind('<<TreeviewSelect>>', self.item_selected)
         self.selection_tree.bind('<<TreeviewSelect>>', self.item_selected)
 
@@ -157,19 +187,37 @@ class App(tk.Tk):
         self.tree.bind('<Button-3>', self.item_right_clicked)
         self.selection_tree.bind('<Button-3>', self.item_right_clicked)
 
+    def post_init(self):
+        self.models = None
+        self.pdfs = None
+        self.munitorum = None
+        self.check_loading = False
+        self.load_pdf_data()
+            
+    def post_load_init(self):
+        self.models = wt.parser.get_pointvalues(self.munitorum)
+        with open(wt.fetcher.pdf_data,'r',encoding='utf8') as data:
+            self.pdfs = json.load(data)
+        self.load_tree(self.tree,self.models)
 
-    def get_hierarchy(self, tree, item):
-        tags = ['hierarchy']
-        hierarchy = []
-        current = item
-        while current:
-            current = tree.parent(current)
-            hierarchy += [tree.item(current)['text']]
+    def on_checking_loading(self):
+        if self.check_loading:
+            if self.munitorum is not None:
+                self.post_load_init()
+                self.check_loading = False
+                return
+            self.after(0,self.on_checking_loading)
 
-        hierarchy = [h for h in hierarchy[::-1] if h]
-
-        tags += hierarchy
-        return tags
+    def load_pdf_data(self):
+        self.munitorum = wt.fetcher.get_munitorum(fetch=True)
+        if self.munitorum is None:
+            ret = tk.messagebox.askokcancel(title="Missing Munitorum",message="Munitorum Field Manual is missing, attempt downloading?")
+            if ret:
+                self.check_loading = True
+                self.after(50,self.on_checking_loading)
+                self.munitorum = wt.fetcher.get_munitorum()
+        else:
+            self.post_load_init()
 
     def get_page_numbers(self, faction,key):
         pnos = []
@@ -193,40 +241,31 @@ class App(tk.Tk):
         def sub_load(tree, key, value, index, faction=None):
             is_dict = isinstance(value, dict)
 
-            if key.isupper():
-                if key == 'DETACHMENT ENHANCEMENTS':
-                    tags = ['detachment enhancements'] + self.get_hierarchy(tree,index) + [tree.item(index)['text']]
-                    index = tree.insert(index, tk.END, text=key, open=True, tags=tags)
-                    
-            elif is_dict:
-                is_open = False
-                if tree.item(index)['text'] == 'DETACHMENT ENHANCEMENTS':
-                    tags = ['enhancement']
-                    is_open=True
-                else:
-                    tags = ['unit']
-                
-                tags +=  self.get_hierarchy(tree,index) + [tree.item(index)['text']]
-                index = tree.insert(index, tk.END, text=key, open=is_open, tags=tags)
+            # TODO: modify self.models instead of this tags bullshit
 
+            if key.isupper():
+                # detchment enhancements
+                if key == 'DETACHMENT ENHANCEMENTS':
+                    index = tree.insert(index, tk.END, text=key, open=True)
+            elif is_dict:
+                # enhancement or unit
+                is_open = tree.item(index)['text'] == 'DETACHMENT ENHANCEMENTS'
+                index = tree.insert(index, tk.END, text=key, open=is_open)
             if is_dict:
                 for k,v in value.items():
                     sub_load(tree,k,v,index=index,faction=faction)
             else:
-                tags = ['command points'] + self.get_hierarchy(tree,index) + [tree.item(index)['text']]
-                index = tree.insert(index, tk.END, text=key, values=(f'{value} pts',), open=False,tags=tags)
+                # command points
+                index = tree.insert(index, tk.END, text=key, values=(f'{value} pts',), open=False)
 
-        def try_open(filename):
-            try:
-                return fitz.open(filename)
-            except:
-                return None
+        if models:
+            for faction, value in models.items():
+                index = tree.insert('', tk.END, text=faction, open=False)
+                sub_load(tree,faction,value,index=index, faction=faction)
+        else:
+            print("warning: Couldn't load models")
 
-        self.pdfs = {k:try_open(v) for k,v in models["PDF"].items()}
-
-        for key, value in models["FACTIONS"].items():
-            index = tree.insert('', tk.END, text=key, open=False, tags=['faction'])
-            sub_load(tree,key,value,index=index, faction=key)
+        return bool(models)
 
 
     def create_image(self, target, faction, pno):
@@ -270,7 +309,7 @@ class App(tk.Tk):
         else:
             hierarchy = tags[tags.index('hierarchy')+1:]
             faction = hierarchy[0]
-            if faction not in self.models["FACTIONS"]:
+            if faction not in self.models:
                 return
 
         pdf = self.pdfs.get(faction,None)
@@ -352,26 +391,26 @@ class App(tk.Tk):
     def add_items_selected(self, event):
         def assemble(i):
             item = self.tree.item(i)
-            tags = item['tags']
             values = item['values']
             cps = values[0]
             parent = self.tree.item(self.tree.parent(i))
 
-            return [f"{parent['text']}",f"{item['text']}", f"{values[0]}"], tags
+            return [f"{parent['text']}",f"{item['text']}", f"{values[0]}"]
 
-        selection = [assemble(i) for i in self.tree.selection() if 'command points' in self.tree.item(i)['tags']]
+        selection = [assemble(i) for i in self.tree.selection() if not self.tree.get_children(i)]
 
-        for s, t in selection:
+        for s in selection:
             name, count, cps = s
-            self.selection_tree.insert('', tk.END, text=name, open=True, values=(count, cps),tags=t)
+            self.selection_tree.insert('', tk.END, text=name, open=True, values=(count, cps))
 
         self.update_total_cps()
 
     def delete_items_selected(self, event):
         for item in event.widget.selection():
             event.widget.delete(item)
-        event.widget.focus_set()
+
         self.update_total_cps()
+        return 'break'
 
     def update_total_cps(self):
         total_cps = 0
@@ -379,6 +418,7 @@ class App(tk.Tk):
             count, cps = self.selection_tree.item(item)['values']
             total_cps += int(cps.split(' ')[0])
         self.total_value['text'] = f'{total_cps}  pts'
+        self.update()
 
 
     def disableChildren(self,parent):
@@ -401,8 +441,11 @@ class App(tk.Tk):
             else:
                 self.enableChildren(child)
 
+def pre_init():
+    pyglet.font.add_file(resource_path('aAtmospheric.ttf'))
 
-
-
-app = App()
-app.mainloop()
+if __name__ == '__main__':
+    def main():
+        app = App()
+        app.mainloop()
+    main()

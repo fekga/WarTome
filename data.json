@@ -1,0 +1,322 @@
+{
+    "Munitorum_Field_Manual": {
+        "update_date": "2023-07-05",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Munitorum_Field_Manual.pdf"
+    },
+    "Rules_Commentary": {
+        "update_date": "2023-06-16",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Rules_Commentary.pdf"
+    },
+    "Quick_Start_Guide": {
+        "update_date": "2023-06-02",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Quick_Start_Guide.pdf"
+    },
+    "Core_Rules": {
+        "update_date": "2023-06-02",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Core_Rules.pdf"
+    },
+    "Index_Cards": {
+        "update_date": "2023-07-05",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Index_Cards.pdf"
+    },
+    "Aeldari": {
+        "update_date": "2023-07-05",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Aeldari.pdf"
+    },
+    "T\u2019au_empire": {
+        "update_date": "2023-06-15",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/T\u2019au_empire.pdf"
+    },
+    "Orks": {
+        "update_date": "2023-06-15",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Orks.pdf"
+    },
+    "Necrons": {
+        "update_date": "2023-06-15",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Necrons.pdf"
+    },
+    "Leagues_of_Votann": {
+        "update_date": "2023-06-15",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Leagues_of_Votann.pdf"
+    },
+    "Genestealer_Cults": {
+        "update_date": "2023-06-15",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Genestealer_Cults.pdf"
+    },
+    "Drukhari": {
+        "update_date": "2023-06-15",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Drukhari.pdf"
+    },
+    "Imperial_Knights": {
+        "update_date": "2023-06-14",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Knights.pdf"
+    },
+    "Astra_Militarum": {
+        "update_date": "2023-06-14",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Astra_Militarum.pdf"
+    },
+    "Agents_Of_The_Imperium": {
+        "update_date": "2023-06-14",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Agents_Of_The_Imperium.pdf"
+    },
+    "Deathwatch": {
+        "update_date": "2023-06-14",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Deathwatch.pdf"
+    },
+    "Adeptus_Custodes": {
+        "update_date": "2023-06-14",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Adeptus_Custodes.pdf"
+    },
+    "Adeptus_Mechanicus": {
+        "update_date": "2023-06-14",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Adeptus_Mechanicus.pdf"
+    },
+    "Grey_Knights": {
+        "update_date": "2023-06-14",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Grey_Knights.pdf"
+    },
+    "Adepta_Sororitas": {
+        "update_date": "2023-06-14",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Adepta_Sororitas.pdf"
+    },
+    "Chaos_Knights": {
+        "update_date": "2023-06-13",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Chaos_Knights.pdf"
+    },
+    "Thousand_Sons": {
+        "update_date": "2023-06-13",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Thousand_Sons.pdf"
+    },
+    "Chaos_Daemons": {
+        "update_date": "2023-06-13",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Chaos_Daemons.pdf"
+    },
+    "Death_Guard": {
+        "update_date": "2023-06-13",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Death_Guard.pdf"
+    },
+    "Chaos_Space_Marines": {
+        "update_date": "2023-06-13",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Chaos_Space_Marines.pdf"
+    },
+    "World_Eaters": {
+        "update_date": "2023-06-13",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/World_Eaters.pdf"
+    },
+    "Blood_Angels": {
+        "update_date": "2023-06-12",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Blood_Angels.pdf"
+    },
+    "Black_Templars": {
+        "update_date": "2023-06-12",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Black_Templars.pdf"
+    },
+    "Dark_Angels": {
+        "update_date": "2023-06-12",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Dark_Angels.pdf"
+    },
+    "Space_Wolves": {
+        "update_date": "2023-06-12",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Space_Wolves.pdf"
+    },
+    "Space_Marines": {
+        "update_date": "2023-06-09",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Space_Marines.pdf"
+    },
+    "Tyranids": {
+        "update_date": "2023-06-08",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Tyranids.pdf"
+    },
+    "Imperial_Armour-Orks": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Orks.pdf"
+    },
+    "Imperial_Armour-Aeldari": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Aeldari.pdf"
+    },
+    "Imperial_Armour-Astra_Militarum_Part_1": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Astra_Militarum_Part_1.pdf"
+    },
+    "Imperial_Armour-Titans": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Titans.pdf"
+    },
+    "Imperial_Armour-Necrons": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Necrons.pdf"
+    },
+    "Imperial_Armour-Imperial_Knights": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Imperial_Knights.pdf"
+    },
+    "Imperial_Armour-Astra_Militarum_Part_2": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Astra_Militarum_Part_2.pdf"
+    },
+    "Imperial_Armour-Astartes": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Astartes.pdf"
+    },
+    "Imperial_Armour-Grey_Knights": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Grey_Knights.pdf"
+    },
+    "Imperial_Armour-Adeptus_Custodes": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Adeptus_Custodes.pdf"
+    },
+    "Imperial_Armour-Chaos_Knights": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Chaos_Knights.pdf"
+    },
+    "Imperial_Armour-Drukhari": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Drukhari.pdf"
+    },
+    "Imperial_Armour-Tyranids": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-Tyranids.pdf"
+    },
+    "Imperial_Armour-T\u2019au_Empire": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Imperial_Armour-T\u2019au_Empire.pdf"
+    },
+    "Legends_of_the_Horus_Heresy_Field_Manual": {
+        "update_date": "2023-06-30",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Legends_of_the_Horus_Heresy_Field_Manual.pdf"
+    },
+    "Horus_Heresy_Legends-Adeptus_Mechanicum": {
+        "update_date": "2023-06-21",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Horus_Heresy_Legends-Adeptus_Mechanicum.pdf"
+    },
+    "Horus_Heresy_Legends-Heretic_Astartes": {
+        "update_date": "2023-06-21",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Horus_Heresy_Legends-Heretic_Astartes.pdf"
+    },
+    "Horus_Heresy_Legends-Adeptus_Astartes": {
+        "update_date": "2023-06-21",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Horus_Heresy_Legends-Adeptus_Astartes.pdf"
+    },
+    "Combat_Patrol": {
+        "update_date": "2023-06-29",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol.pdf"
+    },
+    "Combat_Patrol-Drukhari": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Drukhari.pdf"
+    },
+    "Combat_Patrol-Dark_Angels": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Dark_Angels.pdf"
+    },
+    "Combat_Patrol-Deathwatch": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Deathwatch.pdf"
+    },
+    "Combat_Patrol-Black_Templars": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Black_Templars.pdf"
+    },
+    "Combat_Patrol-Space_Wolves": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Space_Wolves.pdf"
+    },
+    "Combat_Patrol-Blood_Angels": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Blood_Angels.pdf"
+    },
+    "Combat_Patrol-Chaos_Space_Marines": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Chaos_Space_Marines.pdf"
+    },
+    "Combat_Patrol-Chaos_Daemons": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Chaos_Daemons.pdf"
+    },
+    "Combat_Patrol-Aeldari": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Aeldari.pdf"
+    },
+    "Combat_Patrol-Astra_Militarum": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Astra_Militarum.pdf"
+    },
+    "Combat_Patrol-Necrons": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Necrons.pdf"
+    },
+    "Combat_Patrol-Leagues_Of_Votann": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Leagues_Of_Votann.pdf"
+    },
+    "Combat_Patrol-Adeptus_Mechanicus": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Adeptus_Mechanicus.pdf"
+    },
+    "Combat_Patrol-Tyranids": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Tyranids.pdf"
+    },
+    "Combat_Patrol-Space_Marines": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Space_Marines.pdf"
+    },
+    "Combat_Patrol-Adeptus_Custodes": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Adeptus_Custodes.pdf"
+    },
+    "Combat_Patrol-Genestealer_Cults": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Genestealer_Cults.pdf"
+    },
+    "Combat_Patrol-Grey_Knights": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Grey_Knights.pdf"
+    },
+    "Combat_Patrol-Thousand_Sons": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Thousand_Sons.pdf"
+    },
+    "Combat_Patrol-T\u2019au_Empire": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-T\u2019au_Empire.pdf"
+    },
+    "Combat_Patrol-Orks": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Orks.pdf"
+    },
+    "Combat_Patrol-Adepta_Sororitas": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Adepta_Sororitas.pdf"
+    },
+    "Combat_Patrol-Death_Guard": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-Death_Guard.pdf"
+    },
+    "Combat_Patrol-World_Eaters": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Combat_Patrol-World_Eaters.pdf"
+    },
+    "Boarding_Actions-Mustering_Rules": {
+        "update_date": "2023-06-22",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Boarding_Actions-Mustering_Rules.pdf"
+    },
+    "Boarding_Actions": {
+        "update_date": "2023-06-22",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Boarding_Actions.pdf"
+    },
+    "Continuing_The_Crusade": {
+        "update_date": "2023-06-19",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Continuing_The_Crusade.pdf"
+    },
+    "Leviathan_Tournament_Companion": {
+        "update_date": "2023-06-30",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Leviathan_Tournament_Companion.pdf"
+    },
+    "Army_Roster": {
+        "update_date": "2023-06-20",
+        "path": "D:/dev/wh40k_10th_edition/pdfs/Army_Roster.pdf"
+    }
+}
