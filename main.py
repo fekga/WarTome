@@ -132,16 +132,16 @@ class App(tk.Tk):
         self.rowconfigure(0,weight=25)
         self.rowconfigure(1,weight=1)
 
-        self.tree = tree = ttk.Treeview(self, selectmode='extended', columns=('CPS'))
+        self.tree = tree = ttk.Treeview(self, selectmode='extended', columns=('POINTS'))
 
         vsb = ttk.Scrollbar(self, orient="vertical", command=self.tree.yview, style='arrowless.Vertical.TScrollbar')
         vsb.grid(column=1,row=0,rowspan=2,sticky='news')
         tree.configure(yscrollcommand=vsb.set)
         
         tree.heading('#0', text='MODELS', anchor=tk.CENTER)
-        tree.column('#0', anchor=tk.W, stretch=True, minwidth=400)
-        tree.heading('CPS', text='CPS', anchor=tk.CENTER)
-        tree.column('CPS', anchor=tk.E, stretch=True)
+        tree.column('#0', anchor=tk.W, stretch=True, minwidth=600)
+        tree.heading('POINTS', text='POINTS', anchor=tk.CENTER)
+        tree.column('POINTS', anchor=tk.E, stretch=True)
 
         tree.grid(column=0,row=0, rowspan=3, sticky=tk.NSEW)
 
@@ -150,29 +150,40 @@ class App(tk.Tk):
         frame.grid_columnconfigure(0,weight=1)
         frame.grid_columnconfigure(1,weight=0)
         frame.grid(column=2,row=0, sticky='news', columnspan=2)
-        self.selection_tree = ttk.Treeview(frame, selectmode='extended', columns=('Count', 'CPS'))
+        self.selection_tree = ttk.Treeview(frame, selectmode='extended', columns=('Count', 'POINTS'))
         self.selection_tree.grid(column=0, row=0, sticky=tk.NSEW)
         vsb = ttk.Scrollbar(frame, orient="vertical", command=self.selection_tree.yview, style='arrowless.Vertical.TScrollbar')
         vsb.grid(column=1,row=0,sticky='news')
         self.selection_tree.configure(yscrollcommand=vsb.set)
         
         self.selection_tree.heading('#0', text='Type', anchor=tk.CENTER)
-        self.selection_tree.column('#0', anchor=tk.CENTER, stretch=True, minwidth=400)
+        self.selection_tree.column('#0', anchor=tk.CENTER, stretch=True, minwidth=500)
         self.selection_tree.heading('Count', text='Subtype', anchor=tk.CENTER)
-        self.selection_tree.column('Count', anchor=tk.CENTER, stretch=True)
-        self.selection_tree.heading('CPS', text='CPS', anchor=tk.CENTER)
-        self.selection_tree.column('CPS', anchor=tk.CENTER, stretch=True)
+        self.selection_tree.column('Count', anchor=tk.CENTER, stretch=True, minwidth=300)
+        self.selection_tree.heading('POINTS', text='POINTS', anchor=tk.CENTER)
+        self.selection_tree.column('POINTS', anchor=tk.CENTER, stretch=False, minwidth=100)
         
-        self.total_frame = ttk.Frame(self)
-        self.total_frame.grid_columnconfigure(0,weight=1)
-        self.total_frame.grid_columnconfigure(1,weight=1)
-        self.total_frame.grid_rowconfigure(0,weight=1)
-        self.total_frame.grid(column=2,row=1, columnspan=2, sticky='news')
+        frame = ttk.Frame(self)
+        frame.grid_columnconfigure(0,weight=1)
+        frame.grid_columnconfigure(1,weight=1)
+        frame.grid_rowconfigure(0,weight=1)
+        frame.grid(column=2,row=1, columnspan=2, sticky='news')
+
+        subframe = ttk.Frame(frame)
+        subframe.grid_columnconfigure(0,weight=1)
+        subframe.grid_rowconfigure(0,weight=1)
+        subframe.grid(column=0,row=0, columnspan=1, sticky='ew')
         
-        self.total_label = ttk.Label(self.total_frame, text='TOTAL', anchor=tk.CENTER)
+        self.total_label = ttk.Label(subframe, text='TOTAL', anchor=tk.CENTER)
         self.total_label.grid(column=0,row=0,sticky='news')
-        self.total_value = ttk.Label(self.total_frame, text='0  pts', anchor=tk.CENTER)
-        self.total_value.grid(column=1,row=0,sticky='news')
+
+        subframe = ttk.Frame(frame)
+        subframe.grid_columnconfigure(0,weight=1)
+        subframe.grid_rowconfigure(0,weight=1)
+        subframe.grid(column=1,row=0, columnspan=1, sticky='ew')
+
+        self.total_value = ttk.Label(subframe, text='0  points', anchor=tk.CENTER)
+        self.total_value.grid(column=0,row=0,sticky='news')
 
     def init_bindings(self):
         self.tree.bind('<<TreeviewSelect>>', self.item_selected)
@@ -190,36 +201,39 @@ class App(tk.Tk):
     def post_init(self):
         self.models = None
         self.pdfs = None
-        self.munitorum = None
+        self.field_manual = None
         self.check_loading = False
         self.load_pdf_data()
             
     def post_load_init(self):
-        self.models = wt.parser.get_pointvalues(self.munitorum)
+        self.models = wt.parser.get_pointvalues(self.field_manual)
         with open(wt.fetcher.pdf_data,'r',encoding='utf8') as data:
             self.pdfs = json.load(data)
+
+        from pprint import pprint
+        pprint(self.models)
         self.load_tree(self.tree,self.models)
 
     def on_checking_loading(self):
         if self.check_loading:
-            if self.munitorum is not None:
+            if self.field_manual is not None:
                 self.post_load_init()
                 self.check_loading = False
                 return
             self.after(0,self.on_checking_loading)
 
     def load_pdf_data(self):
-        self.munitorum = wt.fetcher.get_munitorum(fetch=True)
-        if self.munitorum is None:
-            ret = tk.messagebox.askokcancel(title="Missing Munitorum",message="Munitorum Field Manual is missing, attempt downloading?")
+        self.field_manual = wt.fetcher.get_field_manual(fetch=True)
+        if self.field_manual is None:
+            ret = tk.messagebox.askokcancel(title="Missing field_manual",message="Field Manual is missing, attempt downloading?")
             if ret:
                 self.check_loading = True
                 self.after(50,self.on_checking_loading)
-                self.munitorum = wt.fetcher.get_munitorum()
+                self.field_manual = wt.fetcher.get_field_manual()
         else:
             self.post_load_init()
 
-    def get_page_numbers(self, faction,key):
+    def get_page_numbers(self, faction, key):
         pnos = []
         key = key.lower()
         if faction is not None and faction in self.pdfs:
@@ -238,8 +252,8 @@ class App(tk.Tk):
         return pnos
 
     def load_tree(self, tree, models):
-        def sub_load(tree, key, value, index, faction=None):
-            is_dict = isinstance(value, dict)
+        def sub_load(tree, key, parent, index, faction=None):
+            is_dict = isinstance(parent, dict)
 
             # TODO: modify self.models instead of this tags bullshit
 
@@ -252,20 +266,18 @@ class App(tk.Tk):
                 is_open = tree.item(index)['text'] == 'DETACHMENT ENHANCEMENTS'
                 index = tree.insert(index, tk.END, text=key, open=is_open)
             if is_dict:
-                for k,v in value.items():
+                for k,v in parent.items():
                     sub_load(tree,k,v,index=index,faction=faction)
             else:
                 # command points
-                index = tree.insert(index, tk.END, text=key, values=(f'{value} pts',), open=False)
+                index = tree.insert(index, tk.END, text=key, values=(f'{parent} points',), open=False)
 
         if models:
-            for faction, value in models.items():
+            for faction, parent in models.items():
                 index = tree.insert('', tk.END, text=faction, open=False)
-                sub_load(tree,faction,value,index=index, faction=faction)
+                sub_load(tree,faction,parent,index=index, faction=faction)
         else:
             print("warning: Couldn't load models")
-
-        return bool(models)
 
 
     def create_image(self, target, faction, pno):
@@ -379,6 +391,7 @@ class App(tk.Tk):
         self.enableChildren(self)
 
     def item_selected(self, event):
+        print('SELECTION')
         if event.widget == self.tree and self.selection_tree.selection() and not self.selection_removed:
             self.selection_removed = True
             self.selection_tree.selection_remove(*self.selection_tree.selection())
@@ -389,6 +402,7 @@ class App(tk.Tk):
             self.selection_removed = False
 
     def add_items_selected(self, event):
+        print('INSERTION')
         def assemble(i):
             item = self.tree.item(i)
             values = item['values']
@@ -397,27 +411,43 @@ class App(tk.Tk):
 
             return [f"{parent['text']}",f"{item['text']}", f"{values[0]}"]
 
-        selection = [assemble(i) for i in self.tree.selection() if not self.tree.get_children(i)]
+        selected_items = self.tree.selection()
+        if not selected_items:
+            selected_items = (event.widget.identify('item',event.x,event.y),)
+        self.tree.selection_set('')
+
+
+        selection = []
+        for i in selected_items:
+            if not self.tree.get_children(i):
+                selection.append(assemble(i))
 
         for s in selection:
             name, count, cps = s
             self.selection_tree.insert('', tk.END, text=name, open=True, values=(count, cps))
 
+        self.tree.selection_set(selected_items)
+
         self.update_total_cps()
 
     def delete_items_selected(self, event):
-        for item in event.widget.selection():
+        print('DELETION')
+        selected_items = event.widget.selection()
+        if not selected_items:
+            event.widget.selection_set(event.widget.identify('item',event.x,event.y))
+        for item in selected_items:
+            event.widget.selection_remove(item)
             event.widget.delete(item)
 
         self.update_total_cps()
-        return 'break'
+        self.selection_removed = True
 
     def update_total_cps(self):
         total_cps = 0
         for item in self.selection_tree.get_children():
             count, cps = self.selection_tree.item(item)['values']
             total_cps += int(cps.split(' ')[0])
-        self.total_value['text'] = f'{total_cps}  pts'
+        self.total_value['text'] = f'{total_cps}  points'
         self.update()
 
 

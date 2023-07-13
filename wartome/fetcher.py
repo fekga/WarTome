@@ -16,7 +16,7 @@ url = "https://www.warhammer-community.com/warhammer-40000-downloads/"
 pdf_data = (here /'..'/'data.json').resolve()
 pdf_folder = (here/'..'/'pdfs').resolve()
 pdf_folder.mkdir(parents=True,exist_ok=True)
-munitorum = 'Munitorum_Field_Manual'
+field_manual = 'Munitorum_Field_Manual'
 
 # to be able to print non-utf8 characters
 sys.stdout.reconfigure(encoding='utf-8')
@@ -179,8 +179,8 @@ def download_pdfs(*,desired=None,fetch=False,skip_outliers=False):
         with open(pdf_data,'w',encoding='utf8') as pdf_datafile:
             json.dump(pdf_datamap, pdf_datafile, indent=4,sort_keys=False)
 
-def get_munitorum(*,fetch=False):
-    results = list(download_pdfs(fetch=fetch,desired=munitorum,skip_outliers=True))
+def get_field_manual(*,fetch=False):
+    results = list(download_pdfs(fetch=fetch,desired=field_manual,skip_outliers=True))
     if results:
         return results[0].path
 
@@ -191,11 +191,11 @@ def update():
     exhaust(download_pdfs(fetch=False,skip_outliers=False))
 
 if __name__ == '__main__':
-    print(get_munitorum())
+    print(get_field_manual())
     #clean()
     #update()
     print('='*40)
-    # path = get_munitorum()
+    # path = get_field_manual()
     # print(path)
     # for result in download_pdfs(fetch=True,skip_outliers=True):
     #     # if needs_download:
